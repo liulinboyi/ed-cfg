@@ -16,7 +16,7 @@ void async function () {
         .option('-s, --set <type> <value>',
             'type: proxy|progress|loglevel|registry; \r\neg: \r\nproxy socks5://127.0.0.1:1080\r\nprogress false\r\nloglevel http\r\nregistry https://mirrors.huaweicloud.com/repository/npm/', parseListArgv)
         .option('-d, --delete <type>', 'delete npm proxy', parseListArgv)
-        .option('-e, --edit', 'edit npm config')
+        .option('-e, --edit', 'edit npm config by hand')
         .parse(process.argv);
     if (program.set && program.args[0] && !program.args[0].match(/'+|"+/g)) {
         let type = program.set[0]
@@ -33,7 +33,7 @@ void async function () {
             console.log(`${type} delete success`);
         })
     } else if (program.edit) {
-        child.exec(`edit npm config by hand`, function (err, sto) {
+        child.exec(`npm config edit`, function (err, sto) {
             console.log(`${sto}`);
         })
     }
