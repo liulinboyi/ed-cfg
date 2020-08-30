@@ -1,0 +1,26 @@
+{
+  "name": "ed-cfg",
+  "version": "0.0.1",
+  "description": "edit npm config, config proxy|progress|loglevel|registry",
+  "main": "ed-cfg.js",
+  "bin": {
+    "ed-cfg": "ed-cfg.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/liulinboyi/ed-cfg.git"
+  },
+  "contributors": [{
+    "name": "liulinboyi",
+    "email": "xiaoliumail@foxmail.com",
+    "url": "https://github.com/liulinboyi"
+  }],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^6.1.0"
+  }
+}
