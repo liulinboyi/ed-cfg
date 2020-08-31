@@ -8,6 +8,12 @@ npm i ed-cfg -g
 ```
 # use
 
+## -recommend
+
+```javascript
+ed-cfg -rec
+```
+
 ## -set
 
 ### proxy
@@ -30,9 +36,9 @@ ed-cfg -s loglevel http
 ed-cfg -s registry https://mirrors.huaweicloud.com/repository/npm/
 ```
 
-## -edit
+## -list
 
-### edit npm config by hand
+### list npm config
 
 ## -delete
 

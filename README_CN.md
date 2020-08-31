@@ -1,5 +1,5 @@
 
-# 编辑npm配置文件
+# 编辑npm配置
 
 # 安装
 
@@ -7,6 +7,12 @@
 npm i ed-cfg -g
 ```
 # 使用
+
+## -recommend
+
+```javascript
+ed-cfg -rec
+```
 
 ## -set
 
@@ -30,9 +36,9 @@ ed-cfg -s loglevel http
 ed-cfg -s registry https://mirrors.huaweicloud.com/repository/npm/
 ```
 
-## -edit
+## -list
 
-### edit npm config by hand
+### list npm config
 
 ## -delete
 

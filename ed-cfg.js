@@ -16,7 +16,8 @@ void async function () {
         .option('-s, --set <type> <value>',
             'type: proxy|progress|loglevel|registry; \r\neg: \r\nproxy socks5://127.0.0.1:1080\r\nprogress false\r\nloglevel http\r\nregistry https://mirrors.huaweicloud.com/repository/npm/', parseListArgv)
         .option('-d, --delete <type>', 'delete npm proxy', parseListArgv)
-        .option('-e, --edit', 'edit npm config by hand')
+        .option('-l, --list', 'list npm config')
+        .option('-rec, --recommend', 'set recommend npm config')
         .parse(process.argv);
     if (program.set && program.args[0] && !program.args[0].match(/'+|"+/g)) {
         let type = program.set[0]
@@ -33,9 +34,23 @@ void async function () {
             console.log(`${type} delete success`);
         })
     } else if (program.edit) {
-        child.exec(`npm config edit`, function (err, sto) {
+        child.exec(`npm config ls -l`, function (err, sto) {
             console.log(`${sto}`);
         })
+    } else if (program.recommend) {
+        let recommend = {
+            "progress": false,
+            "loglevel": "http",
+            "registry": "https://mirrors.huaweicloud.com/repository/npm/"
+        }
+        Object.keys(recommend).forEach(type => {
+            child.exec(`npm config set ${type} ${recommend[type]}`, function (err, sto) {
+                child.exec(`npm config get ${type}`, function (err, sto) {
+                    console.log(`set success, ${type} value is ${sto}`);
+                })
+            })
+        })
+
     }
 }()
 
