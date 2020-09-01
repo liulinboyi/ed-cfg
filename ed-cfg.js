@@ -33,8 +33,8 @@ void async function () {
         child.exec(`npm config delete ${type}`, function (err, sto) {
             console.log(`${type} delete success`);
         })
-    } else if (program.edit) {
-        child.exec(`npm config ls -l`, function (err, sto) {
+    } else if (program.list) {
+        child.exec(`npm config ls -l`, { stdio: 'inherit' }, function (err, sto) {
             console.log(`${sto}`);
         })
     } else if (program.recommend) {
