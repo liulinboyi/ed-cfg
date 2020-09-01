@@ -1,6 +1,6 @@
 {
   "name": "ed-cfg",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "edit npm config, config proxy|progress|loglevel|registry",
   "main": "ed-cfg.js",
   "bin": {

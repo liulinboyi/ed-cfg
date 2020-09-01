@@ -44,3 +44,11 @@ ed-cfg -s registry https://mirrors.huaweicloud.com/repository/npm/
 ## -delete
 
 ### delete npm config
+
+## -use
+
+### set npm registry,eg: npm|taobao|huawei
+
+```javascript
+ed-cfg -u npm
+```
