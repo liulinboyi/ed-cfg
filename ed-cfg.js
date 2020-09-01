@@ -40,14 +40,14 @@ void async function () {
     } else if (program.recommend) {
         let recommend = {
             "progress": false,
-            "loglevel": "http",
+            "logleval": "http",
             "registry": "https://mirrors.huaweicloud.com/repository/npm/"
         }
         Object.keys(recommend).forEach(type => {
             child.exec(`npm config set ${type} ${recommend[type]}`, function (err, sto) {
-                child.exec(`npm config get ${type}`, function (err, sto) {
-                    console.log(`set success, ${type} value is ${sto}`);
-                })
+                // child.exec(`npm config get ${type}`, function (err, sto) {
+                console.log(`set success, ${type} value is ${recommend[type]}`);
+                // })
             })
         })
 
